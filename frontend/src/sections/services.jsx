@@ -1,24 +1,22 @@
-import { Heading, Card } from "../components";
-import { SpecialitiesData } from "../data";
+import { Heading, ServiceCard } from "../components";
+import { ServicesData } from "../data";
 
-const Specialities = () => {
+const Services = () => {
   return (
     <div className="overflow-x-hidden">
       <Heading
-        title={"Specialities"}
+        title={"Services"}
+        pretitle={"Our Services"}
         subtitle={
           "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula aenean massa."
         }
-        pretitle={"Our Specialities"}
       />
       <div className="flex items-center justify-center gap-5 flex-wrap my-10 mx-20">
-        {SpecialitiesData.map((item, index) => (
-          <Card
+        {ServicesData.map((item, index) => (
+          <ServiceCard
             key={index}
             title={item.title}
             description={item.description}
-            link={item.link}
-            icon={item.icon}
           />
         ))}
       </div>
@@ -26,4 +24,4 @@ const Specialities = () => {
   );
 };
 
-export default Specialities;
+export default Services;

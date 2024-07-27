@@ -1,12 +1,13 @@
 import "./App.css";
 import { Navbar } from "./components";
-import { Specialities } from "./sections";
+import { Specialities, Services } from "./sections";
 
 function App() {
   return (
     <>
       <Navbar />
       <Specialities />
+      <Services />
     </>
   );
 }

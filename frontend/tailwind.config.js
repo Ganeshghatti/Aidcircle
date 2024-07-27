@@ -8,6 +8,10 @@ export default {
         lightBlue: "#3267FF",
         skyBlue: "#2087FF",
         muted: "#636571",
+        transparent: "#CBD9FF",
+      },
+      backgroundSize: {
+        "50%": "100rem",
       },
       flex: {
         2: "2 2 0%",
