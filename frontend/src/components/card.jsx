@@ -10,7 +10,7 @@ const Card = ({ title, description, link, icon }) => {
         {description}
       </p>
       <a
-        className="text-skyBlue font-bold family-poppins text-[0.945rem]"
+        className="text-lightBlue font-bold family-poppins text-[0.945rem]"
         href={`${link}`}
       >
         Learn More

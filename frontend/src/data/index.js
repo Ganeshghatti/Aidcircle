@@ -97,3 +97,34 @@ export const ServicesData = [
       "We ensure that the hospitals we recommend meet world-class standards by checking for JCI and NABH accreditation read more...",
   },
 ];
+
+export const CarouselData = [
+  {
+    id: 0,
+    image: "image-1.png",
+    title: "GOOD HEALTH FACILITY",
+    description:
+      "Ensuring Comprehensive Healthcare Services for Optimal Wellness and Quality of Life",
+  },
+  {
+    id: 1,
+    image: "image-2.png",
+    title: "COST EFFECTIVE",
+    description:
+      "Affordable Solutions for Maximum Value Without Compromising Quality",
+  },
+  {
+    id: 2,
+    image: "image-3.png",
+    title: "WE ARE PROVIDING VISA",
+    description:
+      "Your Gateway to Hassle-Free Visa Processing and Worldwide Travel",
+  },
+  {
+    id: 3,
+    image: "image-4.png",
+    title: "GOOD PACKAGE",
+    description:
+      "Offering Exceptional Value with Our Comprehensive and Affordable Package Deals",
+  },
+];

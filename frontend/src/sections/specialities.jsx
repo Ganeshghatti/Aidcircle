@@ -3,7 +3,7 @@ import { SpecialitiesData } from "../data";
 
 const Specialities = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden py-10">
       <Heading
         title={"Specialities"}
         subtitle={
