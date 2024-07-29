@@ -128,3 +128,64 @@ export const CarouselData = [
       "Offering Exceptional Value with Our Comprehensive and Affordable Package Deals",
   },
 ];
+
+export const FooterData = [
+  {
+    id: 0,
+    title: "Company",
+    list: [
+      {
+        id: 0,
+        title: "Why Clarity Ui?",
+      },
+      {
+        id: 1,
+        title: "Contact Us",
+      },
+      {
+        id: 2,
+        title: "Blog",
+      },
+      {
+        id: 3,
+        title: "FAQ",
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Solutions",
+    list: [
+      {
+        id: 0,
+        title: "Services",
+      },
+      {
+        id: 1,
+        title: "Process",
+      },
+      {
+        id: 2,
+        title: "FAQ",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Legal",
+    list: [
+      {
+        id: 0,
+        title: "Terms of Service",
+      },
+      {
+        id: 1,
+        title: "Privacy Policy / GDPR",
+      },
+      {
+        id: 2,
+        title: "Cookie Policy",
+      },
+    ],
+  },
+];

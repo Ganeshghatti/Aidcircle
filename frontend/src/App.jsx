@@ -1,6 +1,12 @@
 import "./App.css";
 import { Navbar } from "./components";
-import { Specialities, Services, Carousel } from "./sections";
+import {
+  Specialities,
+  Services,
+  Carousel,
+  NewsLetter,
+  Footer,
+} from "./sections";
 
 function App() {
   return (
@@ -9,6 +15,8 @@ function App() {
       <Carousel />
       <Specialities />
       <Services />
+      <NewsLetter />
+      <Footer />
     </>
   );
 }

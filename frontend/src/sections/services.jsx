@@ -3,7 +3,7 @@ import { ServicesData } from "../data";
 
 const Services = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden ">
       <Heading
         title={"Services"}
         pretitle={"Our Services"}
@@ -11,7 +11,7 @@ const Services = () => {
           "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula aenean massa."
         }
       />
-      <div className="flex items-center justify-center gap-5 flex-wrap my-10 mx-20">
+      <div className="flex items-center justify-center gap-5 flex-wrap py-20 mx-20">
         {ServicesData.map((item, index) => (
           <ServiceCard
             key={index}

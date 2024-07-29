@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
+import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 
 const ImageSlider = ({ sliderArray }) => {
-  const [contentIndex, setContentIndex] = useState(1);
+  const [contentIndex, setContentIndex] = useState(0);
 
   const showNextImage = () => {
     setContentIndex((index) => {
@@ -20,7 +20,7 @@ const ImageSlider = ({ sliderArray }) => {
   };
 
   return (
-    <div className="flex h-1/2 w-full relative ">
+    <div className="flex flex-col h-1/2 w-full relative ">
       <img
         src={sliderArray[contentIndex].image}
         className="h-[40rem] w-full object-cover"
@@ -35,10 +35,10 @@ const ImageSlider = ({ sliderArray }) => {
         </p>
       </div>
       <button className="imageslider-button left-0" onClick={showPrevImage}>
-        <ArrowLeftCircle height={48} width={48} />
+        <CircleChevronLeft height={48} width={48} fill="#FFFFFF" />
       </button>
-      <button className="imageslider-button right-0">
-        <ArrowRightCircle height={48} width={48} onClick={showNextImage} />
+      <button className="imageslider-button right-0" onClick={showNextImage}>
+        <CircleChevronRight height={48} width={48} fill="#FFFFFF" />
       </button>
     </div>
   );

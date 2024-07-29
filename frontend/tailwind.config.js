@@ -13,6 +13,10 @@ export default {
       backgroundSize: {
         "50%": "100rem",
       },
+      borderRadius: {
+        "4xl": "2.7rem",
+        half: "50%",
+      },
       flex: {
         2: "2 2 0%",
       },
