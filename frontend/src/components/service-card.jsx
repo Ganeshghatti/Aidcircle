@@ -2,7 +2,7 @@ import { BiWallet } from "react-icons/bi";
 
 const serviceCard = ({ title, description }) => {
   return (
-    <div className="flex flex-col w-full  max-w-sm border bg-lightBlue rounded-3xl py-10 p-5 gap-4">
+    <div className="flex flex-col border bg-lightBlue rounded-3xl py-10 p-5 gap-4 h-[11rem]">
       <div className="flex items-center justify-start gap-4">
         <BiWallet className="bg-white rounded-lg  text-lightBlue w-8 h-8" />
 

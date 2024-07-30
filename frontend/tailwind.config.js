@@ -9,6 +9,8 @@ export default {
         skyBlue: "#2087FF",
         muted: "#636571",
         transparent: "#CBD9FF",
+        extraDark: "#00071D",
+        fadeBlue: "#5A81EE",
       },
       backgroundSize: {
         "50%": "100rem",

@@ -3,12 +3,12 @@ import { BsYoutube, BsLinkedin, BsTwitterX } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="bg-darkBlue h-[25rem] flex">
-      <div className="h-full flex flex-col justify-center p-10 space-y-4">
-        <h1 className="text-white font-semibold text-[1.5rem] family-inter">
+    <div className="bg-extraDark h-2/4 md:h-[25rem] flex flex-col md:flex-row">
+      <div className="flex flex-col justify-center items-center md:items-start p-10 space-y-4">
+        <h1 className="text-white font-semibold text-[1.5rem] family-inter text-center md:text-left">
           Logo
         </h1>
-        <p className="text-white/60 font-normal text-[1rem] family-inter">
+        <p className="text-white/60 font-normal text-[1rem] family-inter text-center md:text-left">
           Make your data invisible by generating unlimited identities. The
           next-level in privacy protection for online and travel.
         </p>

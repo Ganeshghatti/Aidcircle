@@ -20,7 +20,7 @@ const Carousel = () => {
     ],
   };
   return (
-    <section className="w-screen h-screen overflow-y-hidden overflow-x-hidden">
+    <section className="w-screen h-screen">
       <Slider {...settings}>
         {CarouselData.map((item, index) => (
           <div key={index} className="w-screen h-screen relative">

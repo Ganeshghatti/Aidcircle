@@ -11,7 +11,7 @@ const Specialities = () => {
         }
         pretitle={"Our Specialities"}
       />
-      <div className="flex items-center justify-center gap-5 flex-wrap my-10 mx-auto max-w-screen-2xl md:px-20">
+      <div className="flex items-center justify-center gap-5 flex-wrap my-10 mx-auto max-w-screen-2xl px-5 md:px-20">
         {SpecialitiesData.map((item, index) => (
           <Card
             key={index}

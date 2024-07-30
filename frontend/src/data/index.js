@@ -82,7 +82,7 @@ export const ServicesData = [
     id: 0,
     title: "Budget Consideration",
     description:
-      "Budget Consideration Recommendations for hospitals and clinics are made based on the required treatment and your budget read more...",
+      "Budget Consideration Recommendations for hospitals and clinics are made based on the required treatment read more...",
   },
   {
     id: 1,
