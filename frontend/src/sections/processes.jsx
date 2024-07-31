@@ -6,7 +6,7 @@ export default function Processes() {
   return (
     <section
       id="BLS"
-      className="flex flex-col gap-2 md:gap-6 w-full py-24 items-center md:py-8 overflow-x-hidden"
+      className="flex w-full flex-col items-center gap-2 overflow-x-hidden py-24 md:gap-6 md:py-8"
     >
       <Heading
         title={" Processes"}
@@ -15,73 +15,73 @@ export default function Processes() {
         }
         pretitle={"Our Processes"}
       />
-      <div className="w-11/12 flex justify-center gap-10 md:mt-20 mt-0 BLS-content-div md:flex-row flex-col-reverse">
-        <div className="flex flex-col justify-around gap-10 md:pt-20 pt-0 md:w-[40%] items-end w-full md:items-center relative">
-          <div className="flex bg-white flex-col gap-4 md:p-8 BLS-card border border-fadeBlue shadow-md rounded-xl md:w-11/12 w-full p-4">
-            <p className="text-lightBlue md:text-[1.5rem] text-lg font-bold family-sora text-center md:text-left">
+      <div className="BLS-content-div mt-0 flex w-11/12 flex-col-reverse justify-center gap-10 md:mt-20 md:flex-row">
+        <div className="relative flex w-full flex-col items-end justify-around gap-10 pt-0 md:w-[40%] md:items-center md:pt-20">
+          <div className="BLS-card flex w-full flex-col gap-4 rounded-xl border border-fadeBlue bg-white p-4 shadow-md md:w-11/12 md:p-8">
+            <p className="family-sora text-center text-lg font-bold text-lightBlue md:text-left md:text-[1.5rem]">
               Patient Inquiry
             </p>
-            <p className="text-black text-[0.9rem] md:text-[1.125rem] font-normal family-sora md:text-left text-center">
+            <p className="family-sora text-center text-[0.9rem] font-normal text-black md:text-left md:text-[1.125rem]">
               Receive detailed reports and case history, including full name and
               exact age.
             </p>
           </div>
 
-          <div className="flex  bg-white flex-col md:p-8 BLS-card border border-fadeBlue shadow-md rounded-xl md:w-11/12 w-full p-4">
-            <p className="text-lightBlue md:text-[1.5rem] text-lg font-bold family-sora text-center md:text-left">
+          <div className="BLS-card flex w-full flex-col rounded-xl border border-fadeBlue bg-white p-4 shadow-md md:w-11/12 md:p-8">
+            <p className="family-sora text-center text-lg font-bold text-lightBlue md:text-left md:text-[1.5rem]">
               Recommendation & Cost Estimate
             </p>
-            <p className="text-black text-[0.9rem] py-4 md:text-[1.125rem] font-normal family-sora md:text-left text-center">
+            <p className="family-sora py-4 text-center text-[0.9rem] font-normal text-black md:text-left md:text-[1.125rem]">
               Forward doctor recommendations, estimated cost, and duration of
               stay to the patient.
             </p>
-            <p className="text-black  text-[0.9rem] md:text-[1.125rem] font-normal family-sora md:text-left text-center">
+            <p className="family-sora text-center text-[0.9rem] font-normal text-black md:text-left md:text-[1.125rem]">
               Allow time for the patient to choose their preferred hospital and
               location.
             </p>
           </div>
         </div>
-        <img src={ProcessDesign} className="md:block hidden h-4/5" />
+        <img src={ProcessDesign} className="hidden h-4/5 md:block" />
 
         <img
           src={ProcessMobile}
-          className="block absolute rel w-full object-scale-down -z-10 md:hidden h-[125%] right-0"
+          className="rel absolute right-0 -z-10 block h-[125%] w-full object-scale-down md:hidden"
         />
 
-        <div className="flex flex-col justify-between gap-10 md:w-[40%] items-start w-full">
-          <div className="flex bg-white flex-col gap-4 md:p-8 BLS-card border border-fadeBlue shadow-md rounded-xl md:w-11/12 w-full p-4">
-            <p className="text-lightBlue md:text-[1.5rem] text-lg font-bold family-sora text-center md:text-left">
+        <div className="flex w-full flex-col items-start justify-between gap-10 md:w-[40%]">
+          <div className="BLS-card flex w-full flex-col gap-4 rounded-xl border border-fadeBlue bg-white p-4 shadow-md md:w-11/12 md:p-8">
+            <p className="family-sora text-center text-lg font-bold text-lightBlue md:text-left md:text-[1.5rem]">
               Medical Opinion
             </p>
-            <p className="text-black text-[0.9rem] md:text-[1.125rem] font-normal family-sora md:text-left text-center">
+            <p className="family-sora text-center text-[0.9rem] font-normal text-black md:text-left md:text-[1.125rem]">
               Send reports to partnered super specialty hospitals in India for
               multiple opinions.
             </p>
-            <p className="text-black text-[0.9rem] md:text-[1.125rem] font-normal family-sora md:text-left text-center">
+            <p className="family-sora text-center text-[0.9rem] font-normal text-black md:text-left md:text-[1.125rem]">
               Include doctor profiles for reference.
             </p>
           </div>
-          <div className="flex flex-col bg-white gap-4 md:p-8 BLS-card border border-fadeBlue shadow-md rounded-xl md:w-11/12 w-full p-4">
-            <p className="text-lightBlue md:text-[1.5rem] text-lg font-bold family-sora text-center md:text-left">
+          <div className="BLS-card flex w-full flex-col gap-4 rounded-xl border border-fadeBlue bg-white p-4 shadow-md md:w-11/12 md:p-8">
+            <p className="family-sora text-center text-lg font-bold text-lightBlue md:text-left md:text-[1.5rem]">
               Visa Assistance
             </p>
-            <p className="text-black text-[0.9rem] md:text-[1.125rem] font-normal family-sora md:text-left text-center">
+            <p className="family-sora text-center text-[0.9rem] font-normal text-black md:text-left md:text-[1.125rem]">
               Provide assistance letter from the chosen hospital for the medical
               visa process.
             </p>
-            <p className="text-black text-[0.9rem] md:text-[1.125rem] font-normal family-sora md:text-left text-center">
+            <p className="family-sora text-center text-[0.9rem] font-normal text-black md:text-left md:text-[1.125rem]">
               Collect patient and attendant passport scans for documentation.
             </p>
           </div>
-          <div className="flex  bg-white flex-col gap-4 md:p-8 BLS-card border border-fadeBlue shadow-md rounded-xl md:w-11/12 w-full p-4">
-            <p className="text-lightBlue md:text-[1.5rem] text-lg font-bold family-sora text-center md:text-left">
+          <div className="BLS-card flex w-full flex-col gap-4 rounded-xl border border-fadeBlue bg-white p-4 shadow-md md:w-11/12 md:p-8">
+            <p className="family-sora text-center text-lg font-bold text-lightBlue md:text-left md:text-[1.5rem]">
               Arrival & Escort
             </p>
-            <p className="text-black text-[0.9rem] md:text-[1.125rem] font-normal family-sora md:text-left text-center">
+            <p className="family-sora text-center text-[0.9rem] font-normal text-black md:text-left md:text-[1.125rem]">
               Meet patient at the airport and escort to chosen destination
               (hotel or hospital).
             </p>
-            <p className="text-black text-[0.9rem] md:text-[1.125rem] font-normal family-sora md:text-left text-center">
+            <p className="family-sora text-center text-[0.9rem] font-normal text-black md:text-left md:text-[1.125rem]">
               Arrange hospital consultation upon request.
             </p>
           </div>

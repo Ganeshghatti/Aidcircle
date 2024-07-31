@@ -136,11 +136,11 @@ export const FooterData = [
     list: [
       {
         id: 0,
-        title: "Why Clarity Ui?",
+        title: "Why AID Circle?",
       },
       {
         id: 1,
-        title: "Contact Us",
+        title: "Health Services",
       },
       {
         id: 2,
@@ -154,37 +154,41 @@ export const FooterData = [
   },
   {
     id: 1,
-    title: "Solutions",
+    title: "Specialities",
     list: [
       {
         id: 0,
-        title: "Services",
+        title: "Heart Transplant",
       },
       {
         id: 1,
-        title: "Process",
+        title: "Cancer",
       },
       {
         id: 2,
-        title: "FAQ",
+        title: "Liver Transplant",
+      },
+      {
+        id: 3,
+        title: "Kidney Transplant",
       },
     ],
   },
   {
     id: 2,
-    title: "Legal",
+    title: "Get in Touch",
     list: [
       {
         id: 0,
-        title: "Terms of Service",
+        title: "About Us",
       },
       {
         id: 1,
-        title: "Privacy Policy / GDPR",
+        title: "Contact Us",
       },
       {
         id: 2,
-        title: "Cookie Policy",
+        title: "Customer Support",
       },
     ],
   },

@@ -3,18 +3,18 @@ import { CircleArrowRight } from "lucide-react";
 // eslint-disable-next-line react/prop-types
 const Card = ({ title, description, link, icon }) => {
   return (
-    <div className="flex flex-col items-center h-[25rem] max-w-sm border border-skyBlue rounded-4xl text-center py-10 bg-transparent relative">
-      <div className="absolute w-[90px] h-[90px] top-[2rem] rounded-full bg-white -z-1 border-4 border-lightBlue"></div>
-      <img src={`${icon}`} className="h-[4rem] w-auto m-auto z-0" />
-      <h1 className="text-darkBlue font-bold family-sora text-[1.512rem] pt-10 pb-5">
+    <div className="relative flex h-[25rem] max-w-sm flex-col items-center rounded-4xl border border-skyBlue bg-transparent py-10 text-center">
+      <div className="-z-1 absolute top-[2rem] h-[90px] w-[90px] rounded-full border-4 border-lightBlue bg-white"></div>
+      <img src={`${icon}`} className="z-0 m-auto h-[4rem] w-auto" />
+      <h1 className="family-sora pb-5 pt-10 text-[1.512rem] font-bold text-darkBlue">
         {title}
       </h1>
-      <p className="text-muted font-normal family-poppins text-[0.756rem] pb-16 px-12">
+      <p className="family-poppins px-12 pb-16 text-[0.756rem] font-normal text-muted">
         {description}
       </p>
-      <div className="flex w-full items-center justify-center space-x-2 relative bottom-4">
+      <div className="relative bottom-4 flex w-full items-center justify-center space-x-2">
         <a
-          className="text-lightBlue font-bold family-poppins text-[0.945rem]"
+          className="family-poppins text-[0.945rem] font-bold text-lightBlue"
           href={`${link}`}
         >
           Learn More

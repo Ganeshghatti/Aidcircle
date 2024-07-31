@@ -29,7 +29,7 @@ const Services = () => {
           "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula aenean massa."
         }
       />
-      <section className="space-x-5 h-full px-10 lg:px-20 py-10 overflow-x-hidden">
+      <section className="h-full space-x-5 overflow-x-hidden px-4 py-10 lg:px-20">
         <Slider {...settings}>
           {ServicesData.map((item, index) => (
             <ServiceCard

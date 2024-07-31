@@ -20,17 +20,17 @@ const Carousel = () => {
     ],
   };
   return (
-    <section className="w-full h-full overflow-y-hidden overflow-x-hidden">
+    <section className="h-full w-full overflow-x-hidden overflow-y-hidden">
       <Slider {...settings}>
         {CarouselData.map((item, index) => (
-          <div key={index} className="w-screen h-screen relative">
-            <img src={item.image} alt="" className="w-full h-full" />
-            <div className="flex flex-col absolute bg-lightBlue/80 py-5 px-2 w-content lg:h-[12.375rem] lg:w-[55.781rem] gap-y-4 m-5 md:mx-20 bottom-10 left-0 right-0 ">
-              <div className="h-[80%] border-l-4 absolute my-auto"></div>
-              <h1 className="text-white font-semibold text-[1.6rem] md:text-[2.332rem] family-sora pl-4">
+          <div key={index} className="relative h-screen w-screen">
+            <img src={item.image} alt="" className="h-full w-full" />
+            <div className="w-content absolute bottom-10 left-0 right-0 m-5 flex flex-col gap-y-4 bg-lightBlue/80 px-2 py-5 md:mx-20 lg:h-[12.375rem] lg:w-[55.781rem]">
+              <div className="absolute my-auto h-[80%] border-l-4"></div>
+              <h1 className="family-sora pl-4 text-[1.6rem] font-semibold text-white md:text-[2.332rem]">
                 {item.title}
               </h1>
-              <p className="text-white font-light family-sora text-[1rem] md:text-[1.738rem] pl-4">
+              <p className="family-sora pl-4 text-[1rem] font-light text-white md:text-[1.738rem]">
                 {item.description}
               </p>
             </div>

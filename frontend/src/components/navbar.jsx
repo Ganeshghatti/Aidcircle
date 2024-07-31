@@ -10,42 +10,42 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-center w-full h-[8rem] mx-auto max-w-screen-2xl px-2.5 lg:px-20 shadow-md bg-white">
+    <div className="max-w-screen fixed z-10 mx-auto flex h-[8rem] w-screen justify-center bg-white px-2.5 shadow-md lg:px-20">
       <div className="flex items-center justify-center">
-        <img src={"logo.svg"} className="h-48 w-48" />
+        <img src={"logo.png"} className="h-48 w-48 object-contain" />
       </div>
-      <ul className="lg:flex flex-1 hidden justify-center items-center my-auto space-x-12 h-full w-full pl-[2rem] ">
+      <ul className="my-auto hidden h-full w-full flex-1 items-center justify-center space-x-12 pl-[2rem] lg:flex">
         {NavbarData.map((item, index) => (
           <li
             key={index}
-            className="text-darkBlue font-bold family-manrope text-[15px] tracking-wide cursor-pointer"
+            className="family-manrope cursor-pointer text-[15px] font-bold tracking-wide text-darkBlue transition hover:text-lightBlue"
           >
             {item.title}
           </li>
         ))}
       </ul>
-      <div className=" lg:flex items-center hidden">
-        <button className="h-[3.4rem] w-[16rem] bg-lightBlue text-[1rem] text-white font-semibold family-sora border rounded-full">
+      <div className="hidden items-center lg:flex">
+        <button className="family-sora h-[3.4rem] w-[16rem] rounded-full border bg-lightBlue text-[1rem] font-semibold text-white active:bg-lightBlue/95">
           Make an Appointment
         </button>
       </div>
-      <div className="lg:hidden flex w-full justify-end py-5">
-        <button onClick={handleToggle}>
+      <div className="flex w-full justify-end py-5 lg:hidden">
+        <button onClick={handleToggle} className="z-10">
           <MenuIcon />
         </button>
         <div>
           {toggleNavbar && (
             <div className="">
-              <ul className="flex w-[70%] flex-col z-10 space-y-3 absolute top-24 h-screen shadow-md  right-0 border-2 border-white bg-white p-4">
+              <ul className="absolute right-0 flex h-screen w-[70%] flex-col items-center justify-center space-y-10 border-2 border-white bg-white p-4 shadow-md">
                 {NavbarData.map((item, index) => (
                   <li
                     key={index}
-                    className="text-darkBlue font-bold family-manrope text-[15px] tracking-wide cursor-pointer"
+                    className="family-manrope cursor-pointer text-[15px] font-bold tracking-wide text-darkBlue"
                   >
                     {item.title}
                   </li>
                 ))}
-                <button className="h-[3.4rem] w-full bg-lightBlue text-[1rem] text-white font-semibold family-sora border rounded-full">
+                <button className="family-sora h-[3.4rem] w-full rounded-full border bg-lightBlue text-[1rem] font-semibold text-white">
                   Make an Appointment
                 </button>
               </ul>

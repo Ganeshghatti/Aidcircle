@@ -25,5 +25,5 @@
 }
 
 .imageslider-button {
-  @apply block absolute top-0 bottom-0 p-[1rem];
+  @apply absolute bottom-0 top-0 block p-[1rem];
 }
