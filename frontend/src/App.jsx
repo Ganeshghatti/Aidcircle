@@ -1,20 +1,16 @@
 import "./App.css";
-import { Navbar } from "./components";
-import { Specialities, Carousel, NewsLetter, Footer } from "./sections";
-import Processes from "./sections/processes";
-import Services from "./sections/services";
+import { About, Contact, Home } from "./pages";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Carousel />
-      <Specialities />
-      <Services />
-      <Processes />
-      <NewsLetter />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" Component={Home} />
+        <Route path="/contact" Component={Contact} />
+        <Route path="/about" Component={About} />
+      </Routes>
+    </Router>
   );
 }
 
