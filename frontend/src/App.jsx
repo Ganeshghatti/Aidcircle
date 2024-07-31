@@ -1,7 +1,8 @@
 import "./App.css";
 import { Navbar } from "./components";
-import { Specialities, Carousel, NewsLetter, Footer, BLS } from "./sections";
-import DemoServices from "./sections/demo-services";
+import { Specialities, Carousel, NewsLetter, Footer } from "./sections";
+import Processes from "./sections/processes";
+import Services from "./sections/services";
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
       <Navbar />
       <Carousel />
       <Specialities />
-      <DemoServices />
-      <BLS />
+      <Services />
+      <Processes />
       <NewsLetter />
       <Footer />
     </>

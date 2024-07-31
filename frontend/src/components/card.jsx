@@ -12,7 +12,7 @@ const Card = ({ title, description, link, icon }) => {
       <p className="text-muted font-normal family-poppins text-[0.756rem] pb-16 px-12">
         {description}
       </p>
-      <div className="flex w-full items-center justify-center space-x-2 ">
+      <div className="flex w-full items-center justify-center space-x-2 relative bottom-4">
         <a
           className="text-lightBlue font-bold family-poppins text-[0.945rem]"
           href={`${link}`}

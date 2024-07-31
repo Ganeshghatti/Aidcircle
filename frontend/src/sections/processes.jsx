@@ -1,8 +1,8 @@
-import BLSdesignpc from "../../public/BLdesign.jpg";
-import Blmobile from "../../public/BLmobile.jpg";
+import ProcessDesign from "../../public/Processdesign.jpg";
+import ProcessMobile from "../../public/Processmobile.jpg";
 import { Heading } from "../components";
 
-export default function BLS() {
+export default function Processes() {
   return (
     <section
       id="BLS"
@@ -41,10 +41,10 @@ export default function BLS() {
             </p>
           </div>
         </div>
-        <img src={BLSdesignpc} className="md:block hidden h-4/5" />
+        <img src={ProcessDesign} className="md:block hidden h-4/5" />
 
         <img
-          src={Blmobile}
+          src={ProcessMobile}
           className="block absolute rel w-full object-scale-down -z-10 md:hidden h-[125%] right-0"
         />
 

@@ -10,8 +10,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex  justify-center w-full mx-auto max-w-screen-2xl px-2.5 lg:px-20 shadow-md bg-white">
-      <ul className="lg:flex hidden justify-center space-x-12 w-full pl-[9.5rem] py-10 h-full">
+    <div className="flex justify-center w-full h-[8rem] mx-auto max-w-screen-2xl px-2.5 lg:px-20 shadow-md bg-white">
+      <div className="flex items-center justify-center">
+        <img src={"logo.svg"} className="h-48 w-48" />
+      </div>
+      <ul className="lg:flex flex-1 hidden justify-center items-center my-auto space-x-12 h-full w-full pl-[2rem] ">
         {NavbarData.map((item, index) => (
           <li
             key={index}
@@ -33,7 +36,7 @@ const Navbar = () => {
         <div>
           {toggleNavbar && (
             <div className="">
-              <ul className="flex flex-col w-full z-10 space-y-3 absolute top-16 h-content shadow-md left-0 right-0 border-2 border-white bg-white p-4">
+              <ul className="flex w-[70%] flex-col z-10 space-y-3 absolute top-24 h-screen shadow-md  right-0 border-2 border-white bg-white p-4">
                 {NavbarData.map((item, index) => (
                   <li
                     key={index}

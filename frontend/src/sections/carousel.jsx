@@ -20,17 +20,17 @@ const Carousel = () => {
     ],
   };
   return (
-    <section className="w-screen h-screen overflow-y-hidden overflow-x-hidden">
+    <section className="w-full h-full overflow-y-hidden overflow-x-hidden">
       <Slider {...settings}>
         {CarouselData.map((item, index) => (
           <div key={index} className="w-screen h-screen relative">
             <img src={item.image} alt="" className="w-full h-full" />
-            <div className="flex flex-col absolute bg-lightBlue/80 py-5 px-2 h-[12.375rem] w-[55.781rem] gap-y-4 m-5 mx-20 bottom-10 left-0 right-0 ">
+            <div className="flex flex-col absolute bg-lightBlue/80 py-5 px-2 w-content lg:h-[12.375rem] lg:w-[55.781rem] gap-y-4 m-5 md:mx-20 bottom-10 left-0 right-0 ">
               <div className="h-[80%] border-l-4 absolute my-auto"></div>
-              <h1 className="text-white font-semibold text-[2.332rem] family-sora pl-4">
+              <h1 className="text-white font-semibold text-[1.6rem] md:text-[2.332rem] family-sora pl-4">
                 {item.title}
               </h1>
-              <p className="text-white font-light family-sora text-[1.738rem] pl-4">
+              <p className="text-white font-light family-sora text-[1rem] md:text-[1.738rem] pl-4">
                 {item.description}
               </p>
             </div>
