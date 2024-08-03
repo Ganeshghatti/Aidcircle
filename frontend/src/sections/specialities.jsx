@@ -1,6 +1,7 @@
 import { Heading, Card } from "../components";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Specialities = () => {
   const [data, setData] = useState(null);
@@ -31,13 +32,14 @@ const Specialities = () => {
       />
       <div className="mx-auto my-10 flex max-w-screen-2xl flex-wrap items-center justify-center gap-5 px-5 md:px-20">
         {data?.map((item, index) => (
-          <Card
-            key={index}
-            title={item.title}
-            description={item.desc}
-            link={item.link}
-            icon={item.icon}
-          />
+          <Link key={index} to={`/specialities/${item.link}`}>
+            <Card
+              title={item.title}
+              description={item.desc}
+              link={item.link}
+              icon={item.icon}
+            />
+          </Link>
         ))}
       </div>
     </div>
