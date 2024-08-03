@@ -1,7 +1,25 @@
 import { Heading, Card } from "../components";
-import { SpecialitiesData } from "../data";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Specialities = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://mediways-server.vercel.app/user/get-all-specialties",
+        );
+        setData(response.data.specialities);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="overflow-x-hidden py-10">
       <Heading
@@ -12,11 +30,11 @@ const Specialities = () => {
         pretitle={"Our Specialities"}
       />
       <div className="mx-auto my-10 flex max-w-screen-2xl flex-wrap items-center justify-center gap-5 px-5 md:px-20">
-        {SpecialitiesData.map((item, index) => (
+        {data?.map((item, index) => (
           <Card
             key={index}
             title={item.title}
-            description={item.description}
+            description={item.desc}
             link={item.link}
             icon={item.icon}
           />

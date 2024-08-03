@@ -1,4 +1,3 @@
-import Navbar from "../components/navbar";
 import {
   Carousel,
   Specialities,
@@ -11,7 +10,6 @@ import {
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Carousel />
       <Specialities />
       <Services />

@@ -24,7 +24,11 @@ const Carousel = () => {
       <Slider {...settings}>
         {CarouselData.map((item, index) => (
           <div key={index} className="relative h-screen w-screen">
-            <img src={item.image} alt="" className="h-full w-full" />
+            <img
+              src={item.image}
+              alt=""
+              className="h-full w-full object-cover"
+            />
             <div className="w-content absolute bottom-10 left-0 right-0 m-5 flex flex-col gap-y-4 bg-lightBlue/80 px-2 py-5 md:mx-20 lg:h-[12.375rem] lg:w-[55.781rem]">
               <div className="absolute my-auto h-[80%] border-l-4"></div>
               <h1 className="family-sora pl-4 text-[1.6rem] font-semibold text-white md:text-[2.332rem]">
