@@ -61,9 +61,11 @@ const Navbar = () => {
                     {item.title}
                   </li>
                 ))}
-                <button className="family-sora h-[3.4rem] w-full rounded-full border bg-lightBlue text-[1rem] font-semibold text-white">
-                  Make an Appointment
-                </button>
+                <Link to={"/campaigns"}>
+                  <button className="family-sora h-[3.4rem] rounded-full border bg-lightBlue px-8 text-[1rem] font-semibold text-white">
+                    Explore Campaigns
+                  </button>
+                </Link>
               </ul>
             </div>
           )}
