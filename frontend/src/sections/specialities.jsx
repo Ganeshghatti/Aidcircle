@@ -1,20 +1,20 @@
 import { Heading, Card } from "../components";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { callAPI } from "../App";
 
 const Specialities = () => {
-  const [data, setData] = useState(null);
+  const [parsedData, setParsedData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://mediways-server.vercel.app/user/get-all-specialties",
-        );
-        setData(response.data.specialities);
-      } catch (error) {
-        console.log(error);
+      const data = localStorage.getItem("Specialities");
+      if (data) {
+        const paramData = JSON.parse(data).specialities;
+        setParsedData(paramData);
+      } else {
+        const paramData = await callAPI();
+        setParsedData(paramData);
       }
     };
 
@@ -31,7 +31,7 @@ const Specialities = () => {
         pretitle={"Our Specialities"}
       />
       <div className="mx-auto my-10 flex max-w-screen-2xl flex-wrap items-center justify-center gap-5 px-5 md:px-20">
-        {data?.map((item, index) => (
+        {parsedData?.map((item, index) => (
           <Link key={index} to={`/specialities/${item.link}`}>
             <Card
               title={item.title}

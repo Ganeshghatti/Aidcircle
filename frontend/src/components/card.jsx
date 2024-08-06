@@ -13,12 +13,12 @@ const Card = ({ title, description, link, icon }) => {
         {description}
       </p>
       <div className="relative bottom-4 flex w-full items-center justify-center space-x-2">
-        <a
+        <p
           className="family-poppins text-[0.945rem] font-bold text-lightBlue"
           href={`${link}`}
         >
           Learn More
-        </a>
+        </p>
         <CircleArrowRight className="text-white" fill="#3267FF" />
       </div>
     </div>

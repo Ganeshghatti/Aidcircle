@@ -11,7 +11,7 @@ const serviceCard = ({ title, description }) => {
         </h1>
       </div>
       <div>
-        <p className="family-poppins text-[0.756rem] font-medium text-white">
+        <p className="family-poppins text-[0.9rem] font-medium text-white">
           {description}
         </p>
       </div>

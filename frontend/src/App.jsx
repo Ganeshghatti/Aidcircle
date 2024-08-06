@@ -1,24 +1,32 @@
 import "./App.css";
-import { About, Contact, Home, SpecialitiesPage } from "./pages";
+import {
+  About,
+  Contact,
+  Home,
+  SpecialitiesPage,
+  Campaign,
+  CampaignDetails,
+} from "./pages";
 import { Navbar } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
+import { Footer } from "./sections";
 
 import axios from "axios";
 
-function App() {
-  const callAPI = async () => {
-    try {
-      const response = await axios.get(
-        "https://mediways-server.vercel.app/user/get-all-specialties",
-      );
-      return response.data.specialities;
-    } catch (error) {
-      console.error("Error fetching data from API", error);
-      return [];
-    }
-  };
+export const callAPI = async () => {
+  try {
+    const response = await axios.get(
+      "https://mediways-server.vercel.app/user/get-all-specialties",
+    );
+    return response.data.specialities;
+  } catch (error) {
+    console.error("Error fetching data from API", error);
+    return [];
+  }
+};
 
+function App() {
   const EXPIRATION_TIME_MS = 2 * 60 * 60 * 1000;
 
   useEffect(() => {
@@ -67,6 +75,7 @@ function App() {
 
     fetchData();
   }, []);
+
   return (
     <Router>
       <Navbar />
@@ -76,7 +85,10 @@ function App() {
         <Route path="/about" Component={About} />
         {/* <Route path="/specialities" Component={SpecialitiesPage} /> */}
         <Route path="/specialities/:link" Component={SpecialitiesPage} />
+        <Route path="/campaigns" Component={Campaign} />
+        <Route path="/campaigns/:link" Component={CampaignDetails} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

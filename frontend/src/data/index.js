@@ -17,12 +17,18 @@ export const NavbarData = [
   {
     id: 3,
     title: "Specialities",
-    link: "/specialities",
+    link: "/specialities/heart-transplant",
+    dropdown: true,
   },
   {
     id: 4,
     title: "FAQs",
     link: "/faqs",
+  },
+  {
+    id: 5,
+    title: "Contact Us",
+    link: "/contact",
   },
 ];
 

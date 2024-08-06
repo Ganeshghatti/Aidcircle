@@ -4,7 +4,6 @@ import {
   Services,
   Processes,
   NewsLetter,
-  Footer,
 } from "../sections";
 
 const Home = () => {
@@ -15,7 +14,6 @@ const Home = () => {
       <Services />
       <Processes />
       <NewsLetter />
-      <Footer />
     </>
   );
 };

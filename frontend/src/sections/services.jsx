@@ -1,10 +1,25 @@
-import { ServicesData } from "../data";
+import { ServiceCard } from "../components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ServiceCard, Heading } from "../components";
+import { Heading } from "../components";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Services = () => {
+  const [servicesData, setServicesData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(
+        "https://mediways-server.vercel.app/user/get-all-services",
+      );
+      setServicesData(response.data.services);
+    };
+
+    fetchData();
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -31,11 +46,11 @@ const Services = () => {
       />
       <section className="h-full space-x-5 overflow-x-hidden px-4 py-10 lg:px-20">
         <Slider {...settings}>
-          {ServicesData.map((item, index) => (
+          {servicesData?.map((item, index) => (
             <ServiceCard
               key={index}
               title={item.title}
-              description={item.description}
+              description={item.desc}
             />
           ))}
         </Slider>

@@ -2,6 +2,7 @@ import { NavbarData } from "../data";
 import { MenuIcon } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggleNavbar, setToggleNavbar] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="max-w-screen fixed z-10 mx-auto flex h-[8rem] w-screen justify-center bg-white px-2.5 shadow-md lg:px-20">
+    <div className="max-w-screen fixed z-10 mx-auto flex h-[6rem] w-screen justify-center bg-white px-2.5 shadow-md lg:px-20">
       <div className="flex items-center justify-center">
         <img
           src={"logo.png"}
@@ -37,9 +38,11 @@ const Navbar = () => {
         ))}
       </ul>
       <div className="hidden items-center lg:flex">
-        <button className="family-sora h-[3.4rem] w-[16rem] rounded-full border bg-lightBlue text-[1rem] font-semibold text-white active:bg-lightBlue/95">
-          Make an Appointment
-        </button>
+        <Link to={"/campaigns"}>
+          <button className="family-sora h-[3.4rem] rounded-full border bg-lightBlue px-10 text-[1rem] font-semibold text-white active:bg-lightBlue/95">
+            Explore Campaigns
+          </button>
+        </Link>
       </div>
       <div className="flex w-full justify-end py-5 lg:hidden">
         <button onClick={handleToggle} className="z-10">
@@ -53,6 +56,7 @@ const Navbar = () => {
                   <li
                     key={index}
                     className="family-manrope cursor-pointer text-[15px] font-bold tracking-wide text-darkBlue"
+                    onClick={() => handleClick(item)}
                   >
                     {item.title}
                   </li>
