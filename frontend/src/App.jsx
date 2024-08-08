@@ -7,6 +7,7 @@ import {
   Campaign,
   CampaignDetails,
   Services,
+  faq,
 } from "./pages";
 import { Navbar } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -89,6 +90,7 @@ function App() {
         <Route path="/campaigns" Component={Campaign} />
         <Route path="/campaigns/:link" Component={CampaignDetails} />
         <Route path="/services" Component={Services} />
+        <Route path="/faqs" Component={faq} />
       </Routes>
       <Footer />
     </Router>
