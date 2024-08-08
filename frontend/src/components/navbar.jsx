@@ -1,19 +1,44 @@
 import { NavbarData } from "../data";
 import { MenuIcon } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import logo from "../../public/logo.png";
+import { callAPI } from "../App";
 
 const Navbar = () => {
   const [toggleNavbar, setToggleNavbar] = useState(false);
 
+  const [parsedData, setParsedData] = useState(null);
+
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+
+  const toggleDropDown = () => {
+    setIsDropDownOpen(!isDropDownOpen);
+  };
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = localStorage.getItem("Specialities");
+      if (data) {
+        const paramData = JSON.parse(data).specialities;
+        setParsedData(paramData);
+      } else {
+        const paramData = await callAPI();
+        setParsedData(paramData);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleToggle = () => {
     setToggleNavbar(!toggleNavbar);
   };
 
-  const handleClick = (item) => {
+  const handleItem = (item) => {
     navigate(item.link);
   };
 
@@ -21,20 +46,41 @@ const Navbar = () => {
     <div className="max-w-screen fixed z-10 mx-auto flex h-[6rem] w-screen justify-center bg-white px-2.5 shadow-md lg:px-20">
       <div className="flex items-center justify-center">
         <img
-          src={"logo.png"}
+          src={logo}
           className="h-48 w-48 cursor-pointer object-contain"
           onClick={() => navigate("/")}
         />
       </div>
       <ul className="my-auto hidden h-full w-full flex-1 items-center justify-center space-x-12 pl-[2rem] lg:flex">
         {NavbarData.map((item, index) => (
-          <li
+          <div
             key={index}
             className={`family-manrope cursor-pointer text-[15px] font-bold tracking-wide text-darkBlue transition hover:text-lightBlue`}
-            onClick={() => handleClick(item)}
+            onClick={() => handleItem(item)}
           >
-            {item.title}
-          </li>
+            {item.dropdown ? (
+              <div className="relative">
+                <li onClick={() => toggleDropDown(item)}>{item.title} ▼</li>
+                {isDropDownOpen && (
+                  <ul className="absolute mt-3 w-[12rem] rounded-md bg-white text-darkBlue shadow-lg">
+                    {parsedData.map((item, index) => (
+                      <div key={index}>
+                        <Link to={`/specialities/${item.link}`}>
+                          <div className="px-4 py-2 hover:text-lightBlue">
+                            <h1>{item.title}</h1>
+                          </div>
+                        </Link>
+                      </div>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ) : (
+              <div>
+                <li>{item.title}</li>
+              </div>
+            )}
+          </div>
         ))}
       </ul>
       <div className="hidden items-center lg:flex">
@@ -56,7 +102,7 @@ const Navbar = () => {
                   <li
                     key={index}
                     className="family-manrope cursor-pointer text-[15px] font-bold tracking-wide text-darkBlue"
-                    onClick={() => handleClick(item)}
+                    onClick={() => handleItem(item)}
                   >
                     {item.title}
                   </li>

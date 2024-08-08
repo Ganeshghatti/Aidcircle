@@ -39,9 +39,8 @@ const Campaign = () => {
       <div className="verflow-hidden py-10">
         <Heading
           title={"Explore our Campaigns"}
-          pretitle={"Our Campaigns"}
-          subtitle={
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula aenean massa. "
+          className={
+            "decoration-5 underline decoration-skyBlue decoration-solid"
           }
         />
         <div className="px-18 flex flex-wrap justify-center p-5">

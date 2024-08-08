@@ -6,6 +6,7 @@ import {
   SpecialitiesPage,
   Campaign,
   CampaignDetails,
+  Services,
 } from "./pages";
 import { Navbar } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -87,6 +88,7 @@ function App() {
         <Route path="/specialities/:link" Component={SpecialitiesPage} />
         <Route path="/campaigns" Component={Campaign} />
         <Route path="/campaigns/:link" Component={CampaignDetails} />
+        <Route path="/services" Component={Services} />
       </Routes>
       <Footer />
     </Router>

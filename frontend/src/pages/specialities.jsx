@@ -54,8 +54,8 @@ const SpecialitiesPage = () => {
 
   return (
     <div className="flex pt-24">
-      <aside className="hidden h-screen w-[30%] p-5 md:block">
-        <div className="flex w-fit flex-col flex-wrap space-y-6 rounded-lg border-2 border-lightBlue bg-transparent px-3 py-3">
+      <aside className="hidden h-screen p-5 md:block">
+        <div className="flex w-[17rem] flex-col flex-wrap space-y-6 rounded-lg border-2 border-lightBlue bg-transparent px-3 py-3">
           {parsedData?.map((item, index) => (
             <Link key={index} to={`/specialities/${item.link}`}>
               <div
@@ -88,7 +88,7 @@ const SpecialitiesPage = () => {
           src={detailData?.wallpaperimg}
           className="relative h-[30rem] w-full rounded-2xl object-cover md:mt-5"
         />
-        <div className="px-1 py-5">{ReactHtmlParser(detailData?.content)}</div>
+        <div className="py-5">{ReactHtmlParser(detailData?.content)}</div>
       </div>
     </div>
   );
