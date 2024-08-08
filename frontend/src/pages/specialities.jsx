@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Breadcrumbs, Typography } from "@mui/material";
 import { callAPI } from "../App";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 
 const SpecialitiesPage = () => {
   const [detailData, setDetailData] = useState();
@@ -88,7 +88,7 @@ const SpecialitiesPage = () => {
           src={detailData?.wallpaperimg}
           className="relative h-[30rem] w-full rounded-2xl object-cover md:mt-5"
         />
-        <div className="py-5">{ReactHtmlParser(detailData?.content)}</div>
+        <div className="py-5">{parse(`${detailData?.content}`)}</div>
       </div>
     </div>
   );

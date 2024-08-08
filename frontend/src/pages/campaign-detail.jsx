@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Slider from "react-slick";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { CampDetail } from "../data";
 import ProgressBar from "../components/progress-bar";
 
@@ -110,7 +110,7 @@ const CampaignDetails = () => {
               <img
                 key={index}
                 src={parsedData?.carousel[item]}
-                className="rounded-lg"
+                className="h-[25rem] w-full rounded-lg object-cover"
               />
             </div>
           ))}
@@ -131,19 +131,32 @@ const CampaignDetails = () => {
           </div>
           <div id="details" className="px-2 py-5">
             <h1 className="family-sora text-3xl font-bold">Details :</h1>
-            <div className="pt-3">{ReactHtmlParser(parsedData?.content)}</div>
+            <div className="pt-3">{parse(`${parsedData?.content}`)}</div>
           </div>
           <div id="documents" className="px-2">
             <h1 className="family-sora text-3xl font-bold">Documents :</h1>
-            <div className="pt-3">{ReactHtmlParser(parsedData?.content)}</div>
+            <div className="flex flex-wrap pt-3">
+              {parsedData?.document.map((item, index) => (
+                <img
+                  key={index}
+                  src={parsedData?.document[index]}
+                  className="h-[20rem] w-[20rem] object-cover p-2"
+                />
+              ))}
+            </div>
           </div>
           <div id="updates" className="px-2 py-5">
             <h1 className="family-sora text-3xl font-bold">Updates:</h1>
-            <div className="pt-3">{ReactHtmlParser(parsedData?.content)}</div>
+            <div className="h-content w-ful mt-3 flex items-center justify-between rounded-lg bg-transparent p-4">
+              <h1 className="family-manrope text-md font-bold">
+                The Child is Safe Now
+              </h1>
+              <p>14th January 2024</p>
+            </div>
           </div>
         </div>
       </div>
-      <aside className="relative order-first space-y-3 p-5 md:order-none md:h-screen">
+      <aside className="relative order-first space-y-3 px-5 md:order-none md:h-screen">
         <div className="space-y-4 rounded-lg bg-transparent p-5">
           <p className="family-poppins text-xs font-normal">
             {parsedData?.createdAt}
