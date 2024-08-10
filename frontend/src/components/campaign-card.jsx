@@ -2,9 +2,9 @@ import { FaLink, FaWhatsapp, FaHeart } from "react-icons/fa";
 import ProgressBar from "./progress-bar";
 
 // eslint-disable-next-line react/prop-types
-const CampaignCard = ({ title, beneficiary, thumbnail }) => {
+const CampaignCard = ({ title, beneficiary, thumbnail, target, donated }) => {
   return (
-    <div className="h-content mt-4 w-[24rem] cursor-pointer rounded-lg border shadow-lg shadow-black/20">
+    <div className="h-content mt-8 w-[21.5rem] cursor-pointer rounded-lg border shadow-lg shadow-black/20 md:w-[24rem]">
       <div className="overflow-hidden rounded-t-lg">
         <img
           src={thumbnail}
@@ -18,7 +18,7 @@ const CampaignCard = ({ title, beneficiary, thumbnail }) => {
         <p className="family-poppins text-[1rem] text-gray-700">
           {beneficiary}
         </p>
-        <ProgressBar target={24000} donated={15621} />
+        <ProgressBar target={target} donated={donated} />
         <div className="flex h-full w-full items-center justify-between">
           <button className="flex items-center rounded-md bg-lightBlue px-3 py-2 text-white">
             <p className="family-inter pr-2">Donate Now</p>

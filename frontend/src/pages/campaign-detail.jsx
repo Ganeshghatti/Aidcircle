@@ -59,6 +59,12 @@ const CampaignDetails = () => {
 
   const [parsedData, setParsedData] = useState(null);
 
+  const [selectedValue, setSelectedValue] = useState("upi");
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -147,12 +153,17 @@ const CampaignDetails = () => {
           </div>
           <div id="updates" className="px-2 py-5">
             <h1 className="family-sora text-3xl font-bold">Updates:</h1>
-            <div className="h-content w-ful mt-3 flex items-center justify-between rounded-lg bg-transparent p-4">
-              <h1 className="family-manrope text-md font-bold">
-                The Child is Safe Now
-              </h1>
-              <p>14th January 2024</p>
-            </div>
+            {parsedData?.updates.map((item, index) => (
+              <div
+                key={index}
+                className="h-content w-ful mt-3 flex items-center justify-between rounded-lg bg-transparent p-4"
+              >
+                <h1 className="family-manrope text-md font-bold">
+                  {item.text}
+                </h1>
+                <p>{item.date}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -170,9 +181,113 @@ const CampaignDetails = () => {
         </div>
         <div className="space-y-4 rounded-lg bg-transparent p-5">
           <h1 className="family-manrope text-xl font-bold leading-7 text-darkBlue">
-            Donation Details :
+            Donation Progress:
           </h1>
           <ProgressBar target={parsedData?.amount} donated={15621} />
+        </div>
+        <div className="space-y-4 rounded-lg bg-transparent p-5">
+          <h1 className="family-manrope text-xl font-bold leading-7 text-darkBlue">
+            Donation Methods :
+          </h1>
+          <div>
+            <form className="flex gap-5">
+              <div>
+                <input
+                  type="radio"
+                  id="upi"
+                  name="upi"
+                  value="upi"
+                  checked={selectedValue === "upi"}
+                  onChange={handleChange}
+                />
+                <label
+                  htmlFor="upi"
+                  className="family-manrope text-md ml-2 font-bold text-darkBlue"
+                >
+                  UPI
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="bank"
+                  name="bank"
+                  value="bank"
+                  checked={selectedValue === "bank"}
+                  onChange={handleChange}
+                />
+                <label
+                  htmlFor="bank"
+                  className="family-manrope text-md ml-2 font-bold text-darkBlue"
+                >
+                  Bank Account
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="qrcode"
+                  name="qrcode"
+                  value="qrcode"
+                  checked={selectedValue === "qrcode"}
+                  onChange={handleChange}
+                />
+                <label
+                  htmlFor="qrcode"
+                  className="family-manrope text-md ml-2 font-bold text-darkBlue"
+                >
+                  QR Code
+                </label>
+              </div>
+            </form>
+            <div className="py-5">
+              {selectedValue === "upi" && (
+                <div>
+                  <h1 className="family-sora text-md font-semibold text-darkBlue">
+                    Benficiary UPI
+                  </h1>
+                  <p className="family-poppins text-sm font-normal text-gray-800">
+                    Here is the Beneficary UPI mentioned, you can pay through
+                    any UPI App
+                  </p>
+                  <p className="mt-4 w-fit rounded-lg bg-blue-300 px-2 py-1 font-semibold text-darkBlue">
+                    {`UPI ID : ${parsedData?.beneficiaryUPI}`}
+                  </p>
+                </div>
+              )}
+              {selectedValue === "bank" && (
+                <div>
+                  <h1 className="family-sora text-md font-semibold text-darkBlue">
+                    Bank Account Information
+                  </h1>
+                  <p className="family-poppins text-sm font-normal text-gray-800">
+                    Here is the Bank Account Information with IFSC Code and Bank
+                  </p>
+                  <p className="mt-4 w-fit rounded-lg bg-blue-300 px-2 py-1 font-semibold text-darkBlue">
+                    {`IFSC Code : ${parsedData?.IFSC}`}
+                  </p>
+                  <p className="mt-4 w-fit rounded-lg bg-blue-300 px-2 py-1 font-semibold text-darkBlue">
+                    {`Bank Account Number : ${parsedData?.bankAccount}`}
+                  </p>
+                </div>
+              )}
+              {selectedValue === "qrcode" && (
+                <div>
+                  <h1 className="family-sora text-md font-semibold text-darkBlue">
+                    UPI QR Code
+                  </h1>
+                  <p className="family-poppins text-sm font-normal text-gray-800">
+                    Here is the OR Code Image to donate. Just Scan, Pay and Help
+                    in our cause.
+                  </p>
+
+                  <p className="mt-4 w-fit rounded-lg bg-white px-2 py-1 font-semibold text-darkBlue">
+                    <img src={parsedData?.qrCode} />
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </aside>
     </div>

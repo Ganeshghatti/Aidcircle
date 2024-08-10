@@ -4,7 +4,7 @@ const Heading = ({ title, subtitle, pretitle, className }) => {
     <div className="w-screen space-y-1 p-5 text-center text-[0.9rem] font-bold">
       <h5 className="family-manrope font-bold text-skyBlue">{pretitle}</h5>
       <h1
-        className={`family-sora text-[3.25rem] font-extrabold tracking-tight text-darkBlue ${className}`}
+        className={`family-sora bg-gradient mx-auto w-fit bg-contain text-[3.25rem] font-extrabold tracking-tight text-darkBlue ${className}`}
       >
         {title}
       </h1>

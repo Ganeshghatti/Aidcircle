@@ -43,7 +43,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="max-w-screen fixed z-10 mx-auto flex h-[6rem] w-screen justify-center bg-white px-2.5 shadow-md lg:px-20">
+    <div className="max-w-screen fixed z-20 mx-auto flex h-[6rem] w-screen justify-center bg-white px-2.5 shadow-md lg:px-20">
       <div className="flex items-center justify-center">
         <img
           src={logo}
@@ -97,15 +97,41 @@ const Navbar = () => {
         <div>
           {toggleNavbar && (
             <div className="">
-              <ul className="absolute right-0 flex h-screen w-[70%] flex-col items-center justify-center space-y-10 border-2 border-white bg-white p-4 shadow-md">
+              <ul className="absolute right-0 flex h-screen w-[70%] flex-col items-center space-y-10 border-2 border-white bg-white p-4 pt-[10rem] shadow-md">
                 {NavbarData.map((item, index) => (
-                  <li
+                  <div
                     key={index}
                     className="family-manrope cursor-pointer text-[15px] font-bold tracking-wide text-darkBlue"
                     onClick={() => handleItem(item)}
                   >
-                    {item.title}
-                  </li>
+                    {item.dropdown ? (
+                      <div className="relative text-center">
+                        <li onClick={() => toggleDropDown(item)}>
+                          {item.title} ▼
+                        </li>
+                        {isDropDownOpen && (
+                          <ul className="mt-3 w-[12rem] rounded-md bg-gray-100 text-center text-darkBlue">
+                            {parsedData.map((item, index) => (
+                              <div key={index}>
+                                <Link to={`/specialities/${item.link}`}>
+                                  <div
+                                    className="px-4 py-2 hover:text-lightBlue"
+                                    onClick={() => handleItem(item)}
+                                  >
+                                    <h1>{item.title}</h1>
+                                  </div>
+                                </Link>
+                              </div>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ) : (
+                      <div>
+                        <li>{item.title}</li>
+                      </div>
+                    )}
+                  </div>
                 ))}
                 <Link to={"/campaigns"}>
                   <button className="family-sora h-[3.4rem] rounded-full border bg-lightBlue px-8 text-[1rem] font-semibold text-white">
